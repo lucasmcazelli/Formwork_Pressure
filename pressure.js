@@ -83,7 +83,7 @@ const concreto = {
       if(p>concreto.pressaolimitada)
       {
         p = concreto.pressaolimitada;
-        ctx.lineTo(((c.width/2) + p), c.height - chao.espessura - concreto.h_maxconcreto +(concreto.pressaolimitada/concreto.densidade));
+        ctx.lineTo(((c.width/2) + p), c.height - chao.espessura - concreto.h_concreto + (concreto.pressaolimitada/concreto.densidade));
         
       };
       ctx.lineTo(((c.width/2) + p), c.height- chao.espessura);
