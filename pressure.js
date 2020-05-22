@@ -127,6 +127,7 @@ function mostra(hf,hc,pm) {
   document.getElementById("hf").innerHTML =  forma.altura;
   document.getElementById("hc").innerHTML =  concreto.h_maxconcreto;
   document.getElementById("pm").innerHTML =  concreto.pressaolimitada;
+  concreto.h_concreto = 0
   loop()
 }
 function loop() {
