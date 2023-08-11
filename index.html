@@ -1,47 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>calculadora do Lucas</title>
-    <script>
-
-    </script>
-</head>
-<body>
-
-      <p>Clique para Concretar.<br>
-      
-      <button onclick="mostra()">Click me</button>
-      <br>
-      <p1>Altura da forma:  <p1 id="hf"></p1> <br></p1>
-      <p2>Altura do Concreto: <p2 id="hc"></p2> <br></p2>
-      <p3>Pressao Maxima:     <p3 id="pm"></p3> <br></p3>
-
-      
-      
-  
-      </p>
-      <canvas id="myCanvas" width="320" height="480"></canvas>
-      
-      
-    
+    <title>Concrete Pressure on Formwork Calculator</title>
     <style>
+        /* Basic Styles for the Layout */
         body {
-          min-height: 100vh;
-          display: flex;
-          justify-content: center;
-          align-items: center;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f5f5f5;
         }
-        canvas {
-          border: 1px solid #000;
-          display: block;
-          margin: 0 auto;
+        .container {
+            display: flex;
+            width: 80%;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .input-section, .canvas-section {
+            flex: 1;
+            padding: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
         }
     </style>
+</head>
 
-    <script src="./pressure.js"></script>
+<body>
+    <div class="container">
+        <!-- Input Section (Left Side) -->
+        <div class="input-section">
+            <label>Formwork Height (in cm):</label>
+            <input type="number" id="formworkHeight">
+
+            <label>Concrete Height (in cm):</label>
+            <input type="number" id="concreteHeight">
+
+            <label>Specific Weight of Concrete (kN/m^3):</label>
+            <input type="number" id="concreteWeight" value="25">
+
+            <label>Formwork Resistance (in kN):</label>
+            <input type="number" id="formworkResistance">
+
+            <label>Rate of Rise (in cm/hour):</label>
+            <input type="number" id="rateOfRise">
+
+            
+            <button onclick="calculateAndDraw()">Calculate & Draw</button>
+        </div>
+
+        <!-- Canvas Section (Right Side) -->
+        <div class="canvas-section">
+            <canvas id="canvas" width="400" height="400"></canvas>
+        </div>
+    </div>
+
+    <!-- JavaScript to handle calculations and canvas drawing will be added here -->
+    <script src="pressure.js"></script>
+
 </body>
+
 </html>
-
-
